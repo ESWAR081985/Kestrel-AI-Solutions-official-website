@@ -3,6 +3,7 @@ import GrowthChart from './GrowthChart';
 import CustomPieChart from './PieChart';
 import CustomLineChart from './LineChart';
 import { ClientPlacementMap } from './ClientPlacementMap';
+import { DashboardSummary } from './DashboardSummary';
 import { IndianRupeeIcon, BuildingOfficeIcon } from './Icons';
 import { Project, Client, ChartDataItem, ProjectAlert, ViewerLog } from '../types';
 import { useCurrency } from '../contexts/CurrencyContext';
@@ -538,6 +539,14 @@ const DashboardView: React.FC<DashboardViewProps> = ({
                     </div>
                 </div>
             </div>
+
+            {/* EXECUTIVE SUMMARY KPI DASHBOARD CARDS */}
+            <DashboardSummary 
+                projects={projects} 
+                clients={clients} 
+                refreshCounter={refreshCounter} 
+                simMode={simMode} 
+            />
 
             {/* PERFORMANCE INSIGHTS KPI SUMMARY ROW */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
